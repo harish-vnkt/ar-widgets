@@ -10,7 +10,7 @@ public class DateTeller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("ChangeDate", 0f, 3600f);
+        InvokeRepeating("ChangeDate", 0f, 30f);
     }
 
     // Update is called once per frame
