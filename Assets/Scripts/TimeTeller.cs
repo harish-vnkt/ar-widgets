@@ -5,7 +5,6 @@ using TMPro;
 
 public class TimeTeller : MonoBehaviour
 {
-    public GameObject timeTextObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +14,6 @@ public class TimeTeller : MonoBehaviour
     // Update is called once per frame
     void ChangeTime()
     {
-        timeTextObject.GetComponent<TextMeshPro>().text = System.DateTime.Now.ToString("h:mm tt");
+        this.GetComponent<TextMeshPro>().text = System.DateTime.Now.ToString("h:mm tt");
     }
 }

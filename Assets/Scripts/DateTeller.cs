@@ -5,7 +5,6 @@ using TMPro;
 
 public class DateTeller : MonoBehaviour
 {   
-    public GameObject dateTextObject;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +15,6 @@ public class DateTeller : MonoBehaviour
     // Update is called once per frame
     void ChangeDate()
     {
-        dateTextObject.GetComponent<TextMeshPro>().text = System.DateTime.Now.ToString("MM/dd/yyyy");
+        this.GetComponent<TextMeshPro>().text = System.DateTime.Now.ToString("MM/dd/yyyy");
     }
 }
