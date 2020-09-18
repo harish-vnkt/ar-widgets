@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class TemperatureTeller : MonoBehaviour
+public class HumidityTeller : MonoBehaviour
 {   
     GameObject requestHandlerGameObject;
     RequestHandler requestHandler;
@@ -14,8 +14,9 @@ public class TemperatureTeller : MonoBehaviour
         requestHandler = requestHandlerGameObject.GetComponent<RequestHandler>();
     }
 
-    void Update() {
-        this.GetComponent<TextMeshPro>().text = this.requestHandler.weatherData.main.temp.ToString() + " F";    
+    // Update is called once per frame
+    void Update()
+    {
+        this.GetComponent<TextMeshPro>().text = this.requestHandler.weatherData.main.humidity.ToString() + "%";
     }
-
 }
