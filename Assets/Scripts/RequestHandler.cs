@@ -7,7 +7,7 @@ public class RequestHandler : MonoBehaviour
 {
     public string apiKey;
     string url = "http://api.openweathermap.org/data/2.5/weather?lat=41.88&lon=-87.6&APPID=";
-    public WeatherData weatherData;
+    [HideInInspector] public WeatherData weatherData;
     // Start is called before the first frame update
     void Start()
     {
