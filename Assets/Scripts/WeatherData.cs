@@ -52,7 +52,7 @@ public class Sys {
 public class WeatherData
 {   
     public Coord coord;
-    public Weather[] weathers;
+    public Weather[] weather;
     public Main main;
     public Wind wind;
     public Clouds clouds;
