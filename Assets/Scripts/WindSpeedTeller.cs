@@ -15,18 +15,19 @@ public class WindSpeedTeller : MonoBehaviour
     {
         requestHandlerGameObject = GameObject.Find("RequestHandler");
         requestHandler = requestHandlerGameObject.GetComponent<RequestHandler>();
+        InvokeRepeating("ModifyFlag", 0f, 1f); 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void ModifyFlag() {
         windSpeed = requestHandler.weatherData.wind.speed;
         direction = requestHandler.weatherData.wind.deg;
         this.GetComponent<TextMeshPro>().text = windSpeed.ToString() + " m/s";
+        
         float newYPosition = (windSpeed / 10f) * this.range;
         this.flagPivot.transform.localPosition = new Vector3(this.flagPivot.transform.localPosition.x, newYPosition, this.flagPivot.transform.localPosition.z);
-        if (this.flagPivot.transform.eulerAngles.y == 0f) {
-            this.flagPivot.transform.RotateAround(this.flagPivot.transform.position, Vector3.up, this.direction);
-        }
+
+        float currentDirection = this.flagPivot.transform.eulerAngles.y;
+        float newDirection = direction - currentDirection;
+        this.flagPivot.transform.RotateAround(this.flagPivot.transform.position, Vector3.up, newDirection);
     }
 }
