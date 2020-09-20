@@ -10,6 +10,7 @@ public class TemperatureTeller : MonoBehaviour
     RequestHandler requestHandler;
     GameObject botCylinderPivot;
     GameObject topCylinderPivot;
+    float scale = -1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,14 +22,26 @@ public class TemperatureTeller : MonoBehaviour
     }
 
     void UpdateThermometer() {
-        this.GetComponent<TextMeshPro>().text = this.requestHandler.weatherData.main.temp.ToString() + " F";
-
+        
         float temperature = this.requestHandler.weatherData.main.temp;
         float range = 1.06f;
         float scaleFactor = ((temperature - 20) / 70f) * range;
+        string unit = "";
+        if (this.requestHandler.unit == "imperial") {
+            unit = " F";
+        }
+        else {
+            unit = " C";
+        }
+        
+        this.GetComponent<TextMeshPro>().text = temperature.ToString() + unit;
 
-        botCylinderPivot.transform.localScale = new Vector3(botCylinderPivot.transform.localScale.x, scaleFactor, botCylinderPivot.transform.localScale.z);
-        topCylinderPivot.transform.localScale = new Vector3(topCylinderPivot.transform.localScale.x, (range - scaleFactor), topCylinderPivot.transform.localScale.z);
+        if (scale == -1 && scaleFactor > 0) {
+            this.scale = scaleFactor;
+            botCylinderPivot.transform.localScale = new Vector3(botCylinderPivot.transform.localScale.x, scaleFactor, botCylinderPivot.transform.localScale.z);
+            topCylinderPivot.transform.localScale = new Vector3(topCylinderPivot.transform.localScale.x, (range - scaleFactor), topCylinderPivot.transform.localScale.z);
+        }
+    
     }
 
 }
