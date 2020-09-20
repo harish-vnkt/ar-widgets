@@ -40,7 +40,7 @@ public class WeatherCondition : MonoBehaviour
     }
 
     void InstantiatePrefab() {
-        if (this.requestHandler.weatherData.weather.Length != 0) {
+        if (this.requestHandler.weatherData.weather.Length != 0 && this.gameObject.activeSelf) {
             if (currentPrefab != this.requestHandler.weatherData.weather[0].description) {
                 if (currentObject != null) {
                     Destroy(currentObject);

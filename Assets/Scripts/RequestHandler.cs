@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class RequestHandler : MonoBehaviour
 {
     public string apiKey;
-    string url = "http://api.openweathermap.org/data/2.5/weather?lat=41.88&lon=-87.6&units=metric&APPID=";
+    string url = "http://api.openweathermap.org/data/2.5/weather?lat=41.88&lon=-87.6&units=imperial&APPID=";
     [HideInInspector] public WeatherData weatherData;
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class RequestHandler : MonoBehaviour
 
     public IEnumerator GetRequest()
     {
-        using (UnityWebRequest webRequest = UnityWebRequest.Get(this.url))
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(url))
         {
             yield return webRequest.SendWebRequest();
             if (webRequest.isNetworkError)

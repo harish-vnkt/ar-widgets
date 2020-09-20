@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Vuforia;
 
 public class TemperatureTeller : MonoBehaviour
 {   
@@ -20,11 +21,11 @@ public class TemperatureTeller : MonoBehaviour
     }
 
     void UpdateThermometer() {
-        this.GetComponent<TextMeshPro>().text = this.requestHandler.weatherData.main.temp.ToString() + " C";
+        this.GetComponent<TextMeshPro>().text = this.requestHandler.weatherData.main.temp.ToString() + " F";
 
         float temperature = this.requestHandler.weatherData.main.temp;
         float range = 1.06f;
-        float scaleFactor = ((20f + temperature) / 60f) * range;
+        float scaleFactor = ((temperature - 20) / 70f) * range;
 
         botCylinderPivot.transform.localScale = new Vector3(botCylinderPivot.transform.localScale.x, scaleFactor, botCylinderPivot.transform.localScale.z);
         topCylinderPivot.transform.localScale = new Vector3(topCylinderPivot.transform.localScale.x, (range - scaleFactor), topCylinderPivot.transform.localScale.z);

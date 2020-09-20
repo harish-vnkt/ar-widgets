@@ -23,8 +23,8 @@ public class HumidityTeller : MonoBehaviour
         this.GetComponent<TextMeshPro>().text = this.requestHandler.weatherData.main.humidity.ToString() + "%";
 
         float humidity = this.requestHandler.weatherData.main.humidity;
-        float range = 1.22f;
-        float scaleFactor = (100 / 100f) * range;
+        float range = 1.38f;
+        float scaleFactor = (humidity / 100f) * range;
 
         botCylinderPivot.transform.localScale = new Vector3(botCylinderPivot.transform.localScale.x, scaleFactor, botCylinderPivot.transform.localScale.z);
         topCylinderPivot.transform.localScale = new Vector3(topCylinderPivot.transform.localScale.x, (range - scaleFactor), topCylinderPivot.transform.localScale.z);
