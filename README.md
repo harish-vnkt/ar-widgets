@@ -42,5 +42,5 @@ This project is an augmented reality app that displays certain widgets to the us
 
 ### Screenshots
 
-![alt-text](readme-resources/screenshot-1.png)
-![alt-text](readme-resources/screenshot-2.png)
+![alt-text](readme_resources/screenshot-1.png)
+![alt-text](readme_resources/screenshot-2.png)
