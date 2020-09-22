@@ -45,8 +45,15 @@ public class WeatherCondition : MonoBehaviour
                 if (currentObject != null) {
                     Destroy(currentObject);
                 }
-                currentObject = Instantiate(objectsDict[this.requestHandler.weatherData.weather[0].description], transform.position, Quaternion.identity, transform.parent);
-                currentPrefab = this.requestHandler.weatherData.weather[0].description;
+                if (objectsDict.ContainsKey(this.requestHandler.weatherData.weather[0].description)){
+                    currentObject = Instantiate(objectsDict[this.requestHandler.weatherData.weather[0].description], transform.position, Quaternion.identity, transform.parent);
+                    currentPrefab = this.requestHandler.weatherData.weather[0].description;
+                }
+                else {
+                    currentObject = Instantiate(objectsDict["few clouds"], transform.position, Quaternion.identity, transform.parent);
+                    currentPrefab = "few clouds";
+                }
+                
             }
         }
     }
