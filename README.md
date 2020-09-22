@@ -42,5 +42,21 @@ This project is an augmented reality app that displays certain widgets to the us
 
 ### Screenshots
 
-![alt-text](readme-resources/screenshot-1.png)
-![alt-text](readme-resources/screenshot-2.png)
+![alt-text](readme_resources/screenshot-1.png) 
+
+__Time and date widget__
+
+![alt-text](readme_resources/screenshot-2.png) 
+
+__Temperature and humidity widget__
+
+### Audio credits
+
+1. Rain - http://soundbible.com/1999-Rain.html - by Pwlae
+2. Sunny Day - http://soundbible.com/1661-Sunny-Day.html - by stephan
+3. Outdoor Carnival - http://soundbible.com/2139-Outdoor-Carnival.html - by Daniel Simon
+4. Distant Thunder and Light Rain - http://soundbible.com/886-Distant-Thunder-And-Light-Rain.html - by Mike Koenig
+5. Monsoon - http://soundbible.com/948-Monsoon.html - by Mike Koenig
+6. Perfect Thunderstorm - http://soundbible.com/916-Perfect-Thunder-Storm.html - by Mike Koenig
+7. Snowing - http://soundbible.com/633-Snowing.html - by Mike Koenig
+8. Wind - http://soundbible.com/1810-Wind.html - by Mark DiAngelo
